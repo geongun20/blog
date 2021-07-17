@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true,
+    "module": "commonjs",
+    "target": "esnext",
+    "jsx": "react",
+    "lib": ["dom", "esnext"],
+    "baseUrl": "./src",
+    "paths": {
+      "graphqlTypes": ["../graphqlTypes"]
+    }
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx", "plugins/**/*.tsx"],
+  "typeRoots": ["node_modules/@types"]
+}
