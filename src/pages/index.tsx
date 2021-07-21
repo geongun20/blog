@@ -1,7 +1,7 @@
 import { Box, Container, Grid } from '@material-ui/core';
 import React from 'react';
 import Header, { HEADER_HIGHT } from '../components/header';
-import PostCard, { Post } from './PostCard';
+import PostCard, { Post } from '../components/PostCard';
 
 const posts: Post[] = [
   {
