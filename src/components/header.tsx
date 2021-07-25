@@ -16,7 +16,7 @@ const Header: FC = () => {
           height: HEADER_HIGHT,
         }}
       >
-        <Button>Geongun</Button>
+        <Link to="/">Lee Seung Geon</Link>
         <Box flexGrow={1} />
         <Link to="/about">About</Link>
       </Toolbar>
