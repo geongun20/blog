@@ -1,8 +1,8 @@
 import { readdir, readFile } from "fs/promises";
 import matter from "gray-matter";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import Link from "../Link";
-import { sans } from "../fonts";
+import Link from "../../../components/Link";
+import { sans } from "../../../components/fonts";
 import remarkSmartpants from "remark-smartypants";
 import rehypePrettyCode from "rehype-pretty-code";
 import { remarkMdxEvalCodeBlock } from "./mdx";
@@ -30,12 +30,6 @@ export default async function PostPage({
     }
   }
   const { content, data } = matter(file);
-  const discussUrl = `https://x.com/search?q=${encodeURIComponent(
-    `https://geongun.me/${params.slug}/`
-  )}`;
-  const editUrl = `https://github.com/geongun20/blog/edit/main/public/${encodeURIComponent(
-    params.slug
-  )}/index.md`;
   return (
     <article>
       <h1

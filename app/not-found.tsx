@@ -1,6 +1,5 @@
-import { sans } from "./fonts";
-import Link from "./Link";
-import "./[slug]/markdown.css";
+import { sans } from "@/components/fonts";
+import "./blog/[slug]/markdown.css";
 
 export default function NotFound() {
   return (
@@ -11,7 +10,7 @@ export default function NotFound() {
           "text-[40px] font-black leading-[44px] text-[--title]",
         ].join(" ")}
       >
-        Not found
+        아직 준비 중 이거나 잘못된 페이지 입니다.
       </h1>
       <div className="markdown mt-10">
         <p>{"This page doesn't exist"}</p>
