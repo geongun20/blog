@@ -10,10 +10,10 @@ export default function NotFound() {
           "text-[40px] font-black leading-[44px] text-[--title]",
         ].join(" ")}
       >
-        아직 준비 중 이거나 잘못된 페이지 입니다.
+        404 Not Found
       </h1>
       <div className="markdown mt-10">
-        <p>{"This page doesn't exist"}</p>
+        <p>아직 준비 중 이거나 잘못된 페이지 입니다.</p>
       </div>
     </article>
   );
