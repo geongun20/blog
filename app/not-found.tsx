@@ -14,7 +14,7 @@ export default function NotFound() {
         Not found
       </h1>
       <div className="markdown mt-10">
-        <p>This page doesn't exist</p>
+        <p>{"This page doesn't exist"}</p>
       </div>
     </article>
   );
