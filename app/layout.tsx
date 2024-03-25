@@ -3,8 +3,9 @@ import HomeLink from "./HomeLink";
 import AutoRefresh from "./AutoRefresh";
 import { serif } from "./fonts";
 import "./global.css";
+import { ReactNode } from "react";
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <AutoRefresh>
       <html lang="en" className={serif.className}>

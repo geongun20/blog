@@ -12,7 +12,11 @@ import { Metadata } from "@/app/page";
 
 overnight.colors["editor.background"] = "var(--code-bg)";
 
-export default async function PostPage({ params }) {
+export default async function PostPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const filename = "./public/" + params.slug + "/index.md";
   const file = await readFile(filename, "utf8");
   let postComponents = {};
@@ -87,7 +91,11 @@ export async function generateStaticParams() {
   return dirs.map((dir) => ({ slug: dir }));
 }
 
-export async function generateMetadata({ params }: { params: Metadata }) {
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const file = await readFile("./public/" + params.slug + "/index.md", "utf8");
   let { data } = matter(file);
   return {

@@ -26,20 +26,17 @@ export default function Link({
   href,
   target,
   ...rest
-}: LinkProps & { href: string } & Pick<
-    AnchorHTMLAttributes<HTMLAnchorElement>,
-    "className" | "children" | "style" | "target"
-  >) {
+}: JSX.IntrinsicElements["a"]) {
   const router = useRouter();
   const [isNavigating, trackNavigation] = useTransition();
-  if (!target && !href.startsWith("/")) {
+  if (!target && (!href || !href.startsWith("/"))) {
     target = "_blank";
   }
   return (
     <NextLink
       {...rest}
       target={target}
-      href={href}
+      href={href ?? ""}
       onClick={(e) => {
         if (!isModifiedEvent(e)) {
           e.preventDefault();

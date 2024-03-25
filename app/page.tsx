@@ -3,6 +3,7 @@ import matter from "gray-matter";
 import Link from "./Link";
 import Color from "colorjs.io";
 import { sans } from "./fonts";
+import { CSSProperties } from "react";
 
 export type Post = {
   date: string;
@@ -90,10 +91,12 @@ function PostTitle({ post }: { post: Post }) {
         "text-[28px] font-black",
         "text-[--lightLink] dark:text-[--darkLink]",
       ].join(" ")}
-      style={{
-        "--lightLink": lightRange(staleness).toString(),
-        "--darkLink": darkRange(staleness).toString(),
-      }}
+      style={
+        {
+          "--lightLink": lightRange(staleness).toString(),
+          "--darkLink": darkRange(staleness).toString(),
+        } as CSSProperties
+      }
     >
       {post.title}
     </h2>
