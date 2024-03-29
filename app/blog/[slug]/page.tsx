@@ -95,5 +95,6 @@ export async function generateMetadata({
   return {
     title: data.title + " — Lee Seung Geon",
     description: data.spoiler,
+    alternates: { types: {} },
   };
 }
