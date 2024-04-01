@@ -19,8 +19,6 @@ export default function PostList({ posts }: { posts: Post[] }) {
     (tags) => tags.length
   );
 
-  console.log(countsByTag);
-
   return (
     <>
       <div className="flex gap-x-4">
