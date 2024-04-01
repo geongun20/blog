@@ -64,8 +64,7 @@ export default async function Home() {
     <div className="relative -top-[10px] flex flex-col gap-8">
       <div>
         <p>소프트웨어 개발자 입니다.</p>
-        <p>기술을 통해 좋은 세상을 만들고 싶습니다.</p>
-        <p>사이트가 아직 미완성입니다.</p>
+        <p>기술을 통해 좋은 세상을 만듭니다.</p>
       </div>
       <PostList posts={posts} />
     </div>
