@@ -40,7 +40,7 @@ export default async function PostPage({
       >
         {data.title}
       </h1>
-      <p className="mt-2 text-[13px] text-gray-700 dark:text-gray-300">
+      <p className="mt-2 text-[13px] text-gray-700">
         {new Date(data.date).toLocaleDateString("en", {
           day: "numeric",
           month: "long",

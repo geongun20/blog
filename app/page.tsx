@@ -1,10 +1,14 @@
-import Link from "../components/Link";
+import PostList from "@/app/PostList";
+import { readdir, readFile } from "fs/promises";
+import matter from "gray-matter";
+import trim from "lodash/trim";
 
 export type Post = {
-  date: string;
+  date: Date;
   spoiler: string;
   slug: string;
   title: string;
+  tags: string[];
 };
 
 export type Metadata = {
@@ -26,25 +30,41 @@ export const metadata: Metadata = {
   },
 };
 
-const MENUS = [
-  { href: "/blog", label: "Blog" },
-  { href: "/book-reviews", label: "Book Reviews" },
-  { href: "/about-me", label: "About me" },
-];
+export async function getPosts(): Promise<Post[]> {
+  const entries = await readdir("./public/", { withFileTypes: true });
+  const dirs = entries
+    .filter((entry) => entry.isDirectory())
+    .map((entry) => entry.name);
+  const fileContents = await Promise.all(
+    dirs.map((dir) => readFile("./public/" + dir + "/index.md", "utf8"))
+  );
+  const posts = dirs.map((slug, i) => {
+    const fileContent = fileContents[i];
+    const data = matter(fileContent).data as Record<
+      keyof Omit<Post, "slug">,
+      string
+    >;
+    return {
+      slug,
+      ...data,
+      date: new Date(data.date),
+      tags: data.tags.split(",").map((tag) => trim(tag)),
+    };
+  });
+  posts.sort((a, b) => b.date.getTime() - a.date.getTime());
+  return posts;
+}
 
 export default async function Home() {
+  const posts = await getPosts();
   return (
     <div className="relative -top-[10px] flex flex-col gap-8">
       <div>
         <p>소프트웨어 개발자 입니다.</p>
         <p>기술을 통해 좋은 세상을 만들고 싶습니다.</p>
-        <p>사이트가 아직 미완성입니다. 양해 부탁드립니다.</p>
+        <p>사이트가 아직 미완성입니다.</p>
       </div>
-      {MENUS.map(({ href, label }) => (
-        <Link href={href} key={label}>
-          <span className="underline">{label}</span>
-        </Link>
-      ))}
+      <PostList posts={posts} />
     </div>
   );
 }

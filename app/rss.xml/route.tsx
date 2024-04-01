@@ -1,6 +1,6 @@
 import { metadata } from "../page";
 import { generateFeed } from "../feed";
-import { getPosts } from "@/app/blog/page";
+import { getPosts } from "@/app/page";
 
 export async function GET() {
   const posts = await getPosts();
