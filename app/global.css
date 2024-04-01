@@ -10,8 +10,7 @@
   --link: #d23669;
   --inlineCode-bg: rgba(255, 229, 100, 0.2);
   --inlineCode-text: #1a1a1a;
-  --pink: lab(63 59.32 -1.47);
-  --purple: lab(33 42.09 -43.19);
+  --khaki: #8f784b;
 }
 @property --myColor1 {
   syntax: "<color>";
