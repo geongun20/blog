@@ -15,25 +15,35 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               <HomeLink />
             </header>
             <main>{children}</main>
-            <footer className="mt-14 flex flex-row gap-x-4">
-              <Link
-                href="mailto://leesg7975@gmail.com"
-                className="text-[13px] underline"
-              >
-                leesg7975@gmail.com
-              </Link>
-              <Link
-                href="https://www.linkedin.com/in/lee-seung-geon/"
-                className="text-[13px] underline"
-              >
-                linkedin
-              </Link>
-              <Link
-                href="https://github.com/geongun20"
-                className="text-[13px] underline"
-              >
-                github
-              </Link>
+            <footer className="mt-14">
+              <div className="flex flex-row gap-x-4">
+                <Link
+                  href="mailto://leesg7975@gmail.com"
+                  className="text-[13px] underline"
+                >
+                  leesg7975@gmail.com
+                </Link>
+                <Link
+                  href="https://www.linkedin.com/in/lee-seung-geon/"
+                  className="text-[13px] underline"
+                >
+                  linkedin
+                </Link>
+                <Link
+                  href="https://github.com/geongun20"
+                  className="text-[13px] underline"
+                >
+                  github
+                </Link>
+              </div>
+              <div className="mt-20">
+                <Link
+                  href="https://github.com/geongun20/blog"
+                  className="text-[13px] underline"
+                >
+                  source code
+                </Link>
+              </div>
             </footer>
           </body>
         </html>
