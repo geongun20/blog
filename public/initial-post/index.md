@@ -1,6 +1,6 @@
 ---
-title: Initial Post
-date: "2024-04-25"
+title: 첫글
+date: "2024-03-25"
 spoiler: 블로그를 쓰려다 내친김에 직접 개발하기
 tags: 블로그, 첫글
 ---
