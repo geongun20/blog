@@ -8,7 +8,6 @@ import rehypePrettyCode from "rehype-pretty-code";
 import { remarkMdxEvalCodeBlock } from "./mdx";
 import overnight from "overnight/themes/Overnight-Slumber.json";
 import "./markdown.css";
-import { Metadata } from "@/app/page";
 
 overnight.colors["editor.background"] = "var(--code-bg)";
 
@@ -29,7 +28,11 @@ export default async function PostPage({
       throw e;
     }
   }
+
   const { content, data } = matter(file);
+  const replacedContent = content
+    .replaceAll("\b", "")
+    .replaceAll(String.fromCharCode(29), "");
   return (
     <article>
       <h1
@@ -49,7 +52,7 @@ export default async function PostPage({
       </p>
       <div className="markdown mt-10">
         <MDXRemote
-          source={content}
+          source={replacedContent}
           components={{
             a: Link,
             ...postComponents,
