@@ -30,6 +30,13 @@ export const metadata: Metadata = {
   },
 };
 
+export function refineTags(tags: string): string[] {
+  return tags
+    .split(",")
+    .map((tag) => trim(tag))
+    .filter((tag) => tag.length > 0);
+}
+
 export async function getPosts(): Promise<Post[]> {
   const entries = await readdir("./public/", { withFileTypes: true });
   const dirs = entries
@@ -48,10 +55,7 @@ export async function getPosts(): Promise<Post[]> {
       slug,
       ...data,
       date: new Date(data.date),
-      tags: data.tags
-        .split(",")
-        .map((tag) => trim(tag))
-        .filter((tag) => tag.length > 0),
+      tags: refineTags(data.tags),
     };
   });
   posts.sort((a, b) => b.date.getTime() - a.date.getTime());

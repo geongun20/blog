@@ -8,6 +8,8 @@ import rehypePrettyCode from "rehype-pretty-code";
 import { remarkMdxEvalCodeBlock } from "./mdx";
 import overnight from "overnight/themes/Overnight-Slumber.json";
 import "./markdown.css";
+import { refineTags } from "@/app/page";
+import PostTag from "@/app/blog/[slug]/PostTag";
 
 overnight.colors["editor.background"] = "var(--code-bg)";
 
@@ -75,6 +77,11 @@ export default async function PostPage({
             },
           }}
         />
+      </div>
+      <div className="mt-2 text-[13px] text-gray-700 gap-x-2 flex">
+        {refineTags(data.tags).map((tag) => (
+          <PostTag key={tag} tag={tag} />
+        ))}
       </div>
     </article>
   );
