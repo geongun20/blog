@@ -65,8 +65,8 @@ export async function getPosts(): Promise<Post[]> {
 export default async function Home() {
   const posts = await getPosts();
   return (
-    <div className="relative -top-[10px] flex flex-col gap-8">
-      <div className="w-full border-b-[1px] border-gray-200 pb-4">
+    <div className="relative -top-[10px] flex flex-col gap-y-4">
+      <div className="w-full border-b-[1px] border-gray-400 pb-8">
         <p>소프트웨어 개발자 입니다.</p>
         <p>기술을 통해 좋은 세상을 만듭니다.</p>
       </div>

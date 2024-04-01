@@ -20,12 +20,12 @@ export default function PostList({ posts }: { posts: Post[] }) {
   );
 
   return (
-    <>
-      <div className="flex gap-x-4">
+    <div>
+      <div className="flex gap-x-4 py-4">
         {map(countsByTag, (count, tag) => (
           <a
             key={tag}
-            className={`underline cursor-pointer ${
+            className={`text-[14px] underline cursor-pointer ${
               selectedTag === tag ? " font-bold" : ""
             }`}
             onClick={(e) => {
@@ -40,38 +40,40 @@ export default function PostList({ posts }: { posts: Post[] }) {
           </a>
         ))}
       </div>
-      {posts
-        .filter((post) => !selectedTag || post.tags.includes(selectedTag))
-        .map((post) => {
-          return (
-            <Link
-              style={{}}
-              key={post.slug}
-              className="block py-4 hover:scale-[1.005]"
-              href={"/blog/" + post.slug + "/"}
-            >
-              <article>
-                <h2
-                  className={[
-                    sans.className,
-                    "text-[28px] font-black",
-                    "text-[--khaki]",
-                  ].join(" ")}
-                >
-                  {post.title}
-                </h2>
-                <p className="text-[13px] text-gray-700">
-                  {new Date(post.date).toLocaleDateString("en", {
-                    day: "numeric",
-                    month: "long",
-                    year: "numeric",
-                  })}
-                </p>
-                <p className="mt-1">{post.spoiler}</p>
-              </article>
-            </Link>
-          );
-        })}
-    </>
+      <div className="">
+        {posts
+          .filter((post) => !selectedTag || post.tags.includes(selectedTag))
+          .map((post) => {
+            return (
+              <Link
+                style={{}}
+                key={post.slug}
+                className="block py-8 hover:scale-[1.005] border-b-[1px] border-gray-200"
+                href={"/blog/" + post.slug + "/"}
+              >
+                <article>
+                  <h2
+                    className={[
+                      sans.className,
+                      "text-[28px] font-black",
+                      "text-[--khaki]",
+                    ].join(" ")}
+                  >
+                    {post.title}
+                  </h2>
+                  <p className="text-[13px] text-gray-700">
+                    {new Date(post.date).toLocaleDateString("en", {
+                      day: "numeric",
+                      month: "long",
+                      year: "numeric",
+                    })}
+                  </p>
+                  <p className="mt-1">{post.spoiler}</p>
+                </article>
+              </Link>
+            );
+          })}
+      </div>
+    </div>
   );
 }
