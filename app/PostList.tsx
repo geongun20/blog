@@ -8,19 +8,23 @@ import { sans } from "@/components/fonts";
 import { Post } from "@/app/page";
 import uniq from "lodash/uniq";
 import { useRouter, useSearchParams } from "next/navigation";
+import { groupBy, map, mapValues } from "lodash";
 
 export default function PostList({ posts }: { posts: Post[] }) {
   const searchParams = useSearchParams();
   const router = useRouter();
   const selectedTag = searchParams.get("tag");
-  const allTags = uniq(posts.flatMap((post) => post.tags));
+  const countsByTag = mapValues(
+    groupBy(posts.flatMap((post) => post.tags)),
+    (tags) => tags.length
+  );
 
-  console.log(allTags);
+  console.log(countsByTag);
 
   return (
     <>
       <div className="flex gap-x-4">
-        {allTags.map((tag) => (
+        {map(countsByTag, (count, tag) => (
           <a
             key={tag}
             className={`underline cursor-pointer ${
@@ -34,7 +38,7 @@ export default function PostList({ posts }: { posts: Post[] }) {
               }
             }}
           >
-            {tag}
+            {tag}({count})
           </a>
         ))}
       </div>
