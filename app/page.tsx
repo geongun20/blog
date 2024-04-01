@@ -48,7 +48,10 @@ export async function getPosts(): Promise<Post[]> {
       slug,
       ...data,
       date: new Date(data.date),
-      tags: data.tags.split(",").map((tag) => trim(tag)),
+      tags: data.tags
+        .split(",")
+        .map((tag) => trim(tag))
+        .filter((tag) => tag.length > 0),
     };
   });
   posts.sort((a, b) => b.date.getTime() - a.date.getTime());

@@ -15,6 +15,8 @@ export default function PostList({ posts }: { posts: Post[] }) {
   const selectedTag = searchParams.get("tag");
   const allTags = uniq(posts.flatMap((post) => post.tags));
 
+  console.log(allTags);
+
   return (
     <>
       <div className="flex gap-x-4">
@@ -25,7 +27,11 @@ export default function PostList({ posts }: { posts: Post[] }) {
               selectedTag === tag ? " font-bold" : ""
             }`}
             onClick={(e) => {
-              router.push(`?tag=${tag}`);
+              if (tag === selectedTag) {
+                router.push(`?`);
+              } else {
+                router.push(`?tag=${tag}`);
+              }
             }}
           >
             {tag}
