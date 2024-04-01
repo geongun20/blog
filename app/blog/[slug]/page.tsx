@@ -23,7 +23,7 @@ export default async function PostPage({
   let postComponents = {};
   try {
     postComponents = await import(
-      "../../public/" + params.slug + "/components.js"
+      "../../../public/" + params.slug + "/components.js"
     );
   } catch (e) {
     if (!e || e.code !== "MODULE_NOT_FOUND") {
