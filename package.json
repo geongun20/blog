@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "tsc": "tsc --watch"
+    "tsc": "tsc --watch",
+    "watch-content": "node ./watcher.js"
   },
   "dependencies": {
     "chokidar": "^3.6.0",
