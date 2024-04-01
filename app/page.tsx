@@ -20,7 +20,7 @@ export type Metadata = {
 };
 
 export const metadata: Metadata = {
-  title: "geongun.me",
+  title: "이승건의 블로그",
   description: "A personal blog by lee seung geon",
   alternates: {
     types: {
