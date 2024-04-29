@@ -1,12 +1,8 @@
 "use client";
 
-import Color from "colorjs.io";
 import Link from "@/components/Link";
-import { useState } from "react";
-import { CSSProperties } from "react";
 import { sans } from "@/components/fonts";
-import { Post } from "@/app/page";
-import uniq from "lodash/uniq";
+import { Post } from "@/app/blog/page";
 import { useRouter, useSearchParams } from "next/navigation";
 import { groupBy, map, mapValues } from "lodash";
 

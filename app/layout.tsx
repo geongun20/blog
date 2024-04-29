@@ -35,6 +35,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 >
                   github
                 </Link>
+                <Link
+                  href="Seung_Geon_Lee_CV.pdf"
+                  className="text-[13px] underline"
+                  target="_blank"
+                >
+                  CV
+                </Link>
               </div>
               <div className="mt-20">
                 <Link

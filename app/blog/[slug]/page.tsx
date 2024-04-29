@@ -8,7 +8,7 @@ import rehypePrettyCode from "rehype-pretty-code";
 import { remarkMdxEvalCodeBlock } from "./mdx";
 import overnight from "overnight/themes/Overnight-Slumber.json";
 import "./markdown.css";
-import { refineTags } from "@/app/page";
+import { refineTags } from "@/app/blog/page";
 import PostTag from "@/app/blog/[slug]/PostTag";
 
 overnight.colors["editor.background"] = "var(--code-bg)";

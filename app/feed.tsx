@@ -1,4 +1,5 @@
-import { Metadata, Post } from "@/app/page";
+import { Metadata } from "@/app/page";
+import { Post } from "@/app/blog/page";
 import { Feed, FeedOptions } from "feed";
 
 export function generateFeed(posts: Post[], metadata: Metadata) {
