@@ -6,7 +6,7 @@ export function generateFeed(posts: Post[], metadata: Metadata) {
   const site_url = "https://geongun.me/";
 
   const feedOptions: FeedOptions = {
-    copyright: "All rights reserved 2024, Lee Seung Geon",
+    copyright: "All rights reserved 2024, Seunggeon Lee",
     author: {
       name: "Seung Geon Lee",
       email: "leesg7975@gmail.com",

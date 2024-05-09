@@ -31,7 +31,7 @@ export default function HomeLink() {
           } as CSSProperties
         }
       >
-        이승건 ﹒ Lee Seung Geon
+        이승건 ﹒ Seunggeon Lee
       </span>
     </Link>
   );
