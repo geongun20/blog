@@ -25,10 +25,7 @@ export default async function Home() {
       <div className="w-full border-b-[1px] border-gray-400 pb-8">
         <p>소프트웨어 개발자 입니다.</p>
         <p>기술을 통해 좋은 세상을 만듭니다.</p>
-        <p>
-          현재는 서울대학교 Visual Computing Lab 에서 AI Research Engineer로
-          일하고 있습니다.
-        </p>
+        <p>현재는 AI 스타트업 Blux 에서 Software Engineer로 일하고 있습니다.</p>
       </div>
       <div className="flex flex-col gap-y-8 pt-6">
         <Link
